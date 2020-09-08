@@ -64,7 +64,7 @@ def mail(message):
 @bot.message_handler(content_types=['text'])
 def text(message):
     if message.chat.type == 'private':
-        print('эм...')
+        bot.send_message(message.chat.id, '🚫ERROR🚫, /help вам в помощь, ибо я не знаю что вы сказали')
     else:
         bot.send_message(message.chat.id, '🚫ERROR🚫, /help вам в помощь, ибо я не знаю что вы сказали')
     
