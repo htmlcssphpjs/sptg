@@ -1,6 +1,6 @@
 import telebot
 bot = telebot.TeleBot('1300559351:AAHDX-SwceDVua-M6xymezPgtOCUdwVFfTY')
-
+i = 0
 @bot.message_handler(content_types=['text'])
 def get_text_messages(message):
     if message.text == "/help":
@@ -11,12 +11,16 @@ def get_text_messages(message):
         bot.send_message(message.chat.id, message.from_user.id)
     elif message.text == "/go":
     	if message.from_user.id == 1218845111:
-    		message.text = message.text.replace('/go ', '')
-    		bot.send_message(message.text, "Всеволод html: Привет")
+    		bot.send_message(message.chat.id, "123")
     	else:
     		bot.send_message(message.chat.id, "У вас нету доступа к этой команде!")
     else:
-        bot.send_message(1218845111, message)
-        print(message)
+    	if i < 10:
+        	bot.send_message(1218845111, message)
+        	print(message)
+        	global i
+        else:
+        	bot.send_message(message.chat.id, "Отдохни друг)))")
+        i = i + 1
 
 bot.polling(none_stop=True, interval=0)
