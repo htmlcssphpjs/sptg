@@ -1,9 +1,7 @@
 import telebot
 bot = telebot.TeleBot('1300559351:AAHDX-SwceDVua-M6xymezPgtOCUdwVFfTY')
-i = 0
 @bot.message_handler(content_types=['text'])
 def get_text_messages(message):
-	global i
     if message.text == "/help":
         bot.send_message(message.from_user.id, "Что не понятно? Пришешь мне сообщение и ждёшь ответа!")
     elif message.text == "/start":
@@ -12,15 +10,12 @@ def get_text_messages(message):
         bot.send_message(message.chat.id, message.from_user.id)
     elif message.text == "/go":
     	if message.from_user.id == 1218845111:
-    		bot.send_message(message.chat.id, "123")
+    		bot.send_message(message.chat.id, "ку")
     	else:
     		bot.send_message(message.chat.id, "У вас нету доступа к этой команде!")
     else:
-    	if i < 10:
-        	bot.send_message(1218845111, message)
-        	print(message)
-        	i = i + 1
-        else:
-        	bot.send_message(message.chat.id, "Отдохни друг)))")
+        bot.send_message(1218845111, message)
+        print(message)
+
 
 bot.polling(none_stop=True, interval=0)
