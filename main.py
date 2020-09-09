@@ -59,7 +59,7 @@ def mail(message):
             i = i + 1
             time.sleep(1)
     except BaseException:
-        bot.send_message(message.chat.id, '🚫ERROR🚫, /help для помощи🤔')
+        bot.send_message(message.chat.id, '🚫ERROR🚫')
 
 @bot.message_handler(content_types=['text'])
 def text(message):
