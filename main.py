@@ -57,7 +57,7 @@ def mail(message):
             server.sendmail(login, toaddr, msg.as_string())
             print('OK')
             i = i + 1
-            time.sleep(1)
+            time.sleep(2)
     except BaseException:
         bot.send_message(message.chat.id, '🚫ERROR🚫')
 
