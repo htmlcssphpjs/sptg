@@ -65,7 +65,5 @@ def mail(message):
 def text(message):
     if message.chat.type == 'private':
         bot.send_message(message.chat.id, '🚫ERROR🚫, /help вам в помощь, ибо я не знаю что вы сказали')
-    else:
-        bot.send_message(message.chat.id, '🚫ERROR🚫, /help вам в помощь, ибо я не знаю что вы сказали')
     
 bot.polling(none_stop=True)
