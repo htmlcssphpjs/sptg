@@ -4,7 +4,7 @@ bot = telebot.TeleBot('1300559351:AAHDX-SwceDVua-M6xymezPgtOCUdwVFfTY')
 @bot.message_handler(content_types=['text'])
 def get_text_messages(message):
     if message.text == "/help":
-        bot.send_message(message.from_user.id, "Что не понятно? Пришешь мне сообщение и ждёшь ответа!")
+        bot.send_message(message.from_user.id, "Что не понятно? Пришешь мне сообщение и ждёшь ответа! <a href=", parse_mode='html'">Пост обо мне</a>", parse_mode='html')
     elif message.text == "/start":
         bot.send_message(message.chat.id, "Привет, я <i>бот для связи</i> с <b>Всеволодом html</b>, все <u>твои сообщения</u> написаные ниже будут отравляться ему!", parse_mode='html')
     elif message.text == "/id":
